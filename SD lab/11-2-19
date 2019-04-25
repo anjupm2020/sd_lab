@@ -1,0 +1,141 @@
+student@T6:~$ man cp
+student@T6:~$ cd ajce
+bash: cd: ajce: No such file or directory
+student@T6:~$ mkdir ajce
+student@T6:~$ cd ajce
+student@T6:~/ajce$ mkdir mca
+student@T6:~/ajce$ cd mca
+student@T6:~/ajce/mca$ mkdir lmca
+student@T6:~/ajce/mca$ mkdir rmca
+student@T6:~/ajce/mca$ mkdir imca
+student@T6:~/ajce/mca$ cd rmca
+student@T6:~/ajce/mca/rmca$ cat >a.txt
+hai
+hello
+^C
+student@T6:~/ajce/mca/rmca$ cat a.txt
+hai
+hello
+student@T6:~/ajce/mca/rmca$ ls
+a.txt
+student@T6:~/ajce/mca/rmca$ cp a.txt b.txt
+student@T6:~/ajce/mca/rmca$ cat b.txt
+hai
+hello
+student@T6:~/ajce/mca/rmca$ cat >new
+^C
+student@T6:~/ajce/mca/rmca$ ls new
+new
+student@T6:~/ajce/mca/rmca$ cp a.txt b.txt new
+cp: target 'new' is not a directory
+student@T6:~/ajce/mca/rmca$ mkdir new
+mkdir: cannot create directory ‘new’: File exists
+student@T6:~/ajce/mca/rmca$ mkdir dir
+student@T6:~/ajce/mca/rmca$ cp a.txt b.txt dir
+student@T6:~/ajce/mca/rmca$ cd ~
+student@T6:~$ cd ajce
+student@T6:~/ajce$ cd mca
+student@T6:~/ajce/mca$ cd rmca
+student@T6:~/ajce/mca/rmca$ cat -b a.txt new
+     1	hai
+     2	hello
+student@T6:~/ajce/mca/rmca$ cd ~
+student@T6:~$ cd ajce
+student@T6:~/ajce$ cd mca
+student@T6:~/ajce/mca$ cp rmca regmca
+cp: -r not specified; omitting directory 'rmca'
+student@T6:~/ajce/mca$ cp -r rmca regmca
+student@T6:~/ajce/mca$ ls -a
+.  ..  imca  lmca  regmca  rmca
+student@T6:~/ajce/mca$ cp -i a.txt  c.txt
+cp: cannot stat 'a.txt': No such file or directory
+student@T6:~/ajce/mca$ cd rmca
+student@T6:~/ajce/mca/rmca$ ls-a
+ls-a: command not found
+student@T6:~/ajce/mca/rmca$ ls -a
+.  ..  a.txt  b.txt  dir  new
+student@T6:~/ajce/mca/rmca$ cp -i a.txt  c.txt
+student@T6:~/ajce/mca/rmca$ cat c.txt
+hai
+hello
+student@T6:~/ajce/mca/rmca$ cp -f a.txt  c.txt
+student@T6:~/ajce/mca/rmca$ cat >c.txt
+1
+2
+^C
+student@T6:~/ajce/mca/rmca$ cat c.txt
+1
+2
+student@T6:~/ajce/mca/rmca$ cp -i a.txt  c.txt
+cp: overwrite 'c.txt'? n
+student@T6:~/ajce/mca/rmca$ cp -f a.txt  c.txt
+student@T6:~/ajce/mca/rmca$ cat c.txt
+hai
+hello
+student@T6:~/ajce/mca/rmca$ man cp
+student@T6:~/ajce/mca/rmca$ ls
+a.txt  b.txt  c.txt  dir  new
+student@T6:~/ajce/mca/rmca$ cp new dir
+student@T6:~/ajce/mca/rmca$ cd dir
+student@T6:~/ajce/mca/rmca/dir$ ls
+a.txt  b.txt  new
+student@T6:~/ajce/mca/rmca/dir$ ls new
+new
+student@T6:~/ajce/mca/rmca/dir$ ls -l new
+-rw-r--r-- 1 student student 0 Feb 11 17:47 new
+student@T6:~/ajce/mca/rmca/dir$ ls -l b.txt
+-rw-r--r-- 1 student student 10 Feb 11 16:53 b.txt
+student@T6:~/ajce/mca/rmca/dir$ ls -b a.txt s
+ls: cannot access 's': No such file or directory
+a.txt
+student@T6:~/ajce/mca/rmca/dir$ ls -b a.txt s.txt
+ls: cannot access 's.txt': No such file or directory
+a.txt
+student@T6:~/ajce/mca/rmca/dir$ ls -b a.txt new
+a.txt  new
+student@T6:~/ajce/mca/rmca/dir$ ls -a
+.  ..  a.txt  b.txt  new
+student@T6:~/ajce/mca/rmca/dir$ cd ..
+student@T6:~/ajce/mca/rmca$ cp -v a.txt
+cp: missing destination file operand after 'a.txt'
+Try 'cp --help' for more information.
+student@T6:~/ajce/mca/rmca$ cp -v d.txt
+cp: missing destination file operand after 'd.txt'
+Try 'cp --help' for more information.
+student@T6:~/ajce/mca/rmca$ mkdir aa
+student@T6:~/ajce/mca/rmca$ cp -l a.txt aa
+student@T6:~/ajce/mca/rmca$ cd aa
+student@T6:~/ajce/mca/rmca/aa$ ls
+a.txt
+student@T6:~/ajce/mca/rmca/aa$ cd ..
+student@T6:~/ajce/mca/rmca$ mkdir bb
+student@T6:~/ajce/mca/rmca$ cp * bb
+cp: -r not specified; omitting directory 'aa'
+cp: -r not specified; omitting directory 'bb'
+cp: -r not specified; omitting directory 'dir'
+student@T6:~/ajce/mca/rmca$ cp *txt bb
+student@T6:~/ajce/mca/rmca$ ls -l /bb
+ls: cannot access '/bb': No such file or directory
+student@T6:~/ajce/mca/rmca$ cd bb
+student@T6:~/ajce/mca/rmca/bb$ ls bb
+ls: cannot access 'bb': No such file or directory
+student@T6:~/ajce/mca/rmca/bb$ cd..
+cd..: command not found
+student@T6:~/ajce/mca/rmca/bb$ cd ~
+student@T6:~$ cd ajce
+student@T6:~/ajce$ cd mca 
+student@T6:~/ajce/mca$ cd rmca
+student@T6:~/ajce/mca/rmca$ ls
+aa  a.txt  bb  b.txt  c.txt  dir  new
+student@T6:~/ajce/mca/rmca$ ls -l /bb
+ls: cannot access '/bb': No such file or directory
+student@T6:~/ajce/mca/rmca$ ls -l \bb
+total 12
+-rw-r--r-- 1 student student 10 Feb 11 18:28 a.txt
+-rw-r--r-- 1 student student 10 Feb 11 18:28 b.txt
+-rw-r--r-- 1 student student 10 Feb 11 18:28 c.txt
+-rw-r--r-- 1 student student  0 Feb 11 18:28 new
+student@T6:~/ajce/mca/rmca$ cp -v a.txt ss
+'a.txt' -> 'ss'
+student@T6:~/ajce/mca/rmca$ 
+

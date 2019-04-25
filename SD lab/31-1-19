@@ -1,0 +1,99 @@
+student@T6:~$ mkdir ajce
+student@T6:~$ cd ajce
+student@T6:~/ajce$ mkdir mca
+student@T6:~/ajce$ cd mca
+student@T6:~/ajce/mca$ mkdir rmca
+student@T6:~/ajce/mca$ mkdir lmca
+student@T6:~/ajce/mca$ mkdir int_mca
+student@T6:~/ajce/mca$ cd rmca
+student@T6:~/ajce/mca/rmca$ cd ..
+student@T6:~/ajce/mca$ cd /
+student@T6:/$ pwd
+/
+student@T6:/$ cd rmca
+bash: cd: rmca: No such file or directory
+student@T6:/$ cd ~
+student@T6:~$ cd rmca
+bash: cd: rmca: No such file or directory
+student@T6:~$ cd ~
+student@T6:~$ cd ajce
+student@T6:~/ajce$ cd mca
+student@T6:~/ajce/mca$ cd /
+student@T6:/$ cd ~
+student@T6:~$ cd ajce
+student@T6:~/ajce$ pwd
+/home/student/ajce
+student@T6:~/ajce$ cd mca
+student@T6:~/ajce/mca$ ls
+int_mca  lmca  rmca
+student@T6:~/ajce/mca$ ls -l
+total 12
+drwxr-xr-x 2 student student 4096 Jan 31 20:05 int_mca
+drwxr-xr-x 2 student student 4096 Jan 31 20:05 lmca
+drwxr-xr-x 2 student student 4096 Jan 31 20:05 rmca
+student@T6:~/ajce/mca$ ls > out.txt
+student@T6:~/ajce/mca$ ls -d */
+int_mca/  lmca/  rmca/
+student@T6:~/ajce/mca$ ls ..
+mca
+student@T6:~/ajce/mca$ cd ~
+student@T6:~$ cd ajce
+student@T6:~/ajce$ cd mca
+student@T6:~/ajce/mca$ ls ~
+28-1-19  Desktop    Downloads         Music     Public     Videos
+ajce     Documents  examples.desktop  Pictures  Templates
+student@T6:~/ajce/mca$ ls -t
+out.txt  int_mca  lmca  rmca
+student@T6:~/ajce/mca$ ls -a
+.  ..  int_mca  lmca  out.txt  rmca
+student@T6:~/ajce/mca$ ls *
+out.txt
+
+int_mca:
+
+lmca:
+
+rmca:
+student@T6:~/ajce/mca$ cd ~
+student@T6:~$ ls ajce/mca
+int_mca  lmca  out.txt  rmca
+student@T6:~$ cd ajce
+student@T6:~/ajce$ cd mca
+student@T6:~/ajce/mca$ ls -s
+total 16
+4 int_mca  4 lmca  4 out.txt  4 rmca
+student@T6:~/ajce/mca$ cd ~
+student@T6:~$ ls /home/user/ajce/mca
+ls: cannot access '/home/user/ajce/mca': No such file or directory
+student@T6:~$ pwd
+/home/student
+student@T6:~$ ls /ajce/mca
+ls: cannot access '/ajce/mca': No such file or directory
+student@T6:~$ ls
+28-1-19  Desktop    Downloads         Music     Public     Videos
+ajce     Documents  examples.desktop  Pictures  Templates
+student@T6:~$ ls /ajce
+ls: cannot access '/ajce': No such file or directory
+student@T6:~$ ls \ajce
+mca
+student@T6:~$ ls \ajce\mca
+ls: cannot access 'ajcemca': No such file or directory
+student@T6:~$ ls \mca
+ls: cannot access 'mca': No such file or directory
+student@T6:~$ ls \ajce
+mca
+student@T6:~$ ls \ajce\mca
+ls: cannot access 'ajcemca': No such file or directory
+student@T6:~$ ls ajce\mca
+ls: cannot access 'ajcemca': No such file or directory
+student@T6:~$ ajce\mca
+ajcemca: command not found
+student@T6:~$ ls ajce\mca
+ls: cannot access 'ajcemca': No such file or directory
+student@T6:~$ ls ajce/mca
+int_mca  lmca  out.txt  rmca
+student@T6:~$ man ls
+student@T6:~$ man pwd
+student@T6:~$ man ls
+student@T6:~$ 
+

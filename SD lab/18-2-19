@@ -1,0 +1,320 @@
+student@T6:~$ cd ajce
+student@T6:~/ajce$ cd mca
+student@T6:~/ajce/mca$ cd rmca
+student@T6:~/ajce/mca/rmca$ 
+student@T6:~/ajce/mca/rmca$ ls
+a1.txt  bb  b.txt  dir  g  p.txt  t.txt  x.txt  z.txt
+student@T6:~/ajce/mca/rmca$ cat a1.txt
+h,ai|	hello
+s,dsu |dfs fuy dg fd sgh fh	gh	uuideduyewftuyge 	sbs
+jdgf,yhs |fyds hdj hd
+12345,67890
+student@T6:~/ajce/mca/rmca$ cd bb
+student@T6:~/ajce/mca/rmca/bb$ ls
+a.txt  b.txt  c.txt  new
+student@T6:~/ajce/mca/rmca/bb$ rm new
+student@T6:~/ajce/mca/rmca/bb$ ls
+a.txt  b.txt  c.txt
+student@T6:~/ajce/mca/rmca/bb$ cd ..
+student@T6:~/ajce/mca/rmca$ ls
+a1.txt  bb  b.txt  dir  g  p.txt  t.txt  x.txt  z.txt
+student@T6:~/ajce/mca/rmca$ cat p.txt
+hjhjhhh hffsadsd zkkkz rtrttt
+fcbskjfhdrfughdfrgt jdfsfsuyjfgrugreufgfggfgfgg
+xsdf
+student@T6:~/ajce/mca/rmca$ cat t.txt
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+student@T6:~/ajce/mca/rmca$ paste p.txt t.txt
+hjhjhhh hffsadsd zkkkz rtrttt	1
+fcbskjfhdrfughdfrgt jdfsfsuyjfgrugreufgfggfgfgg	2
+xsdf	3
+	4
+	5
+	6
+	7
+	8
+	9
+	10
+student@T6:~/ajce/mca/rmca$ paste p.txt x.txt
+hjhjhhh hffsadsd zkkkz rtrttt	fddgfhggjhjhjjk
+fcbskjfhdrfughdfrgt jdfsfsuyjfgrugreufgfggfgfgg	sdsdfgfjhretruyk,m,m,n
+xsdf	
+student@T6:~/ajce/mca/rmca$ paste number p.txt x.txt
+paste: number: No such file or directory
+student@T6:~/ajce/mca/rmca$ paste -d "|" p.txt x.txt
+hjhjhhh hffsadsd zkkkz rtrttt|fddgfhggjhjhjjk
+fcbskjfhdrfughdfrgt jdfsfsuyjfgrugreufgfggfgfgg|sdsdfgfjhretruyk,m,m,n
+xsdf|
+student@T6:~/ajce/mca/rmca$ cat >f1
+anju
+anjana
+aaaa
+gggg
+hhhh
+yyyy
+^C
+student@T6:~/ajce/mca/rmca$ cat >f2
+kannur 
+kasaragod
+kottayam
+wayanadu
+calicut
+idukki
+^C
+student@T6:~/ajce/mca/rmca$ 
+student@T6:~/ajce/mca/rmca$ cat >f3
+1
+2
+3
+4
+5
+6^C
+student@T6:~/ajce/mca/rmca$ paste f1 f2 f3
+anju	kannur 	1
+anjana	kasaragod	2
+aaaa	kottayam	3
+gggg	wayanadu	4
+hhhh	calicut	5
+yyyy	idukki	6
+student@T6:~/ajce/mca/rmca$ paste -d "|" f1 f2 f3
+anju|kannur |1
+anjana|kasaragod|2
+aaaa|kottayam|3
+gggg|wayanadu|4
+hhhh|calicut|5
+yyyy|idukki|6
+student@T6:~/ajce/mca/rmca$ paste -d "|," f1 f2 f3
+anju|kannur ,1
+anjana|kasaragod,2
+aaaa|kottayam,3
+gggg|wayanadu,4
+hhhh|calicut,5
+yyyy|idukki,6
+student@T6:~/ajce/mca/rmca$ paste -d "|*" f1 f2 f3
+anju|kannur *1
+anjana|kasaragod*2
+aaaa|kottayam*3
+gggg|wayanadu*4
+hhhh|calicut*5
+yyyy|idukki*6
+student@T6:~/ajce/mca/rmca$ paste -d "*," f1 f2 f3
+anju*kannur ,1
+anjana*kasaragod,2
+aaaa*kottayam,3
+gggg*wayanadu,4
+hhhh*calicut,5
+yyyy*idukki,6
+student@T6:~/ajce/mca/rmca$ paste -s f1 f2 f3
+anju	anjana	aaaa	gggg	hhhh	yyyy
+kannur 	kasaragod	kottayam	wayanadu	calicut	idukki
+1	2	3	4	5	6
+student@T6:~/ajce/mca/rmca$ paste -s -d ":" f1 f2 f3
+anju:anjana:aaaa:gggg:hhhh:yyyy
+kannur :kasaragod:kottayam:wayanadu:calicut:idukki
+1:2:3:4:5:6
+student@T6:~/ajce/mca/rmca$ paste -s -d "*" f1 f2 f3
+anju*anjana*aaaa*gggg*hhhh*yyyy
+kannur *kasaragod*kottayam*wayanadu*calicut*idukki
+1*2*3*4*5*6
+student@T6:~/ajce/mca/rmca$ paste -s -d "**" f1 f2 f3
+anju*anjana*aaaa*gggg*hhhh*yyyy
+kannur *kasaragod*kottayam*wayanadu*calicut*idukki
+1*2*3*4*5*6
+student@T6:~/ajce/mca/rmca$ cat f1 | paste
+anju
+anjana
+aaaa
+gggg
+hhhh
+yyyy
+student@T6:~/ajce/mca/rmca$ cat f1 | paste --
+anju
+anjana
+aaaa
+gggg
+hhhh
+yyyy
+student@T6:~/ajce/mca/rmca$ cat f1 | paste --
+anju
+anjana
+aaaa
+gggg
+hhhh
+yyyy
+student@T6:~/ajce/mca/rmca$ cat f1 | paste - -
+anju	anjana
+aaaa	gggg
+hhhh	yyyy
+student@T6:~/ajce/mca/rmca$ cat f1 | paste - - -
+anju	anjana	aaaa
+gggg	hhhh	yyyy
+student@T6:~/ajce/mca/rmca$ cat f1 | paste - - - - -
+anju	anjana	aaaa	gggg	hhhh
+yyyy				
+student@T6:~/ajce/mca/rmca$ paste - - - <f1
+anju	anjana	aaaa
+gggg	hhhh	yyyy
+student@T6:~/ajce/mca/rmca$ paste - - - - - - <f1
+anju	anjana	aaaa	gggg	hhhh	yyyy
+student@T6:~/ajce/mca/rmca$ cut -d " " -f 1 f1 | paste -
+anju
+anjana
+aaaa
+gggg
+hhhh
+yyyy
+student@T6:~/ajce/mca/rmca$ cut -d " " -f 1 f1 | paste - -
+anju	anjana
+aaaa	gggg
+hhhh	yyyy
+student@T6:~/ajce/mca/rmca$ cut -d " " -f 1 f2 | paste - -
+kannur	kasaragod
+kottayam	wayanadu
+calicut	idukki
+student@T6:~/ajce/mca/rmca$ cut -d " " -f 1 f2 | paste - - -
+kannur	kasaragod	kottayam
+wayanadu	calicut	idukki
+student@T6:~/ajce/mca/rmca$ paste -d "|" f1 f2
+anju|kannur 
+anjana|kasaragod
+aaaa|kottayam
+gggg|wayanadu
+hhhh|calicut
+yyyy|idukki
+student@T6:~/ajce/mca/rmca$ paste -d "|," f1 f2 f3
+anju|kannur ,1
+anjana|kasaragod,2
+aaaa|kottayam,3
+gggg|wayanadu,4
+hhhh|calicut,5
+yyyy|idukki,6
+student@T6:~/ajce/mca/rmca$ paste - - - - <f3
+1	2	3	4
+5	6		
+student@T6:~/ajce/mca/rmca$ paste -s -d "\" f1 f2 f3
+> ^C
+student@T6:~/ajce/mca/rmca$ paste -s -d "|" f1 f2 f3
+anju|anjana|aaaa|gggg|hhhh|yyyy
+kannur |kasaragod|kottayam|wayanadu|calicut|idukki
+1|2|3|4|5|6
+student@T6:~/ajce/mca/rmca$ paste -s -d "***" f1 f2 f3
+anju*anjana*aaaa*gggg*hhhh*yyyy
+kannur *kasaragod*kottayam*wayanadu*calicut*idukki
+1*2*3*4*5*6
+student@T6:~/ajce/mca/rmca$ paste -- <f3
+1
+2
+3
+4
+5
+6
+student@T6:~/ajce/mca/rmca$ paste - - <f3
+1	2
+3	4
+5	6
+student@T6:~/ajce/mca/rmca$ paste - - - <f3
+1	2	3
+4	5	6
+student@T6:~/ajce/mca/rmca$ paste -version
+paste: invalid option -- 'v'
+Try 'paste --help' for more information.
+student@T6:~/ajce/mca/rmca$ paste --version
+paste (GNU coreutils) 8.28
+Copyright (C) 2017 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by David M. Ihnat and David MacKenzie.
+student@T6:~/ajce/mca/rmca$ paste -s -d "*" f3 f2
+1*2*3*4*5*6
+kannur *kasaragod*kottayam*wayanadu*calicut*idukki
+student@T6:~/ajce/mca/rmca$ paste -s f3
+1	2	3	4	5	6
+student@T6:~/ajce/mca/rmca$ paste -d "'"  f3
+1
+2
+3
+4
+5
+6
+student@T6:~/ajce/mca/rmca$ paste -d "'"  f3 f2
+1'kannur 
+2'kasaragod
+3'kottayam
+4'wayanadu
+5'calicut
+6'idukki
+student@T6:~/ajce/mca/rmca$ paste -d ";*" f3 f2 f1
+1;kannur *anju
+2;kasaragod*anjana
+3;kottayam*aaaa
+4;wayanadu*gggg
+5;calicut*hhhh
+6;idukki*yyyy
+student@T6:~/ajce/mca/rmca$ paste -s -d "*" f3 f2 f1
+1*2*3*4*5*6
+kannur *kasaragod*kottayam*wayanadu*calicut*idukki
+anju*anjana*aaaa*gggg*hhhh*yyyy
+student@T6:~/ajce/mca/rmca$ paste -s -d ":" f3 f2 f1
+1:2:3:4:5:6
+kannur :kasaragod:kottayam:wayanadu:calicut:idukki
+anju:anjana:aaaa:gggg:hhhh:yyyy
+student@T6:~/ajce/mca/rmca$ paste - - - - - <f2
+kannur 	kasaragod	kottayam	wayanadu	calicut
+idukki				
+student@T6:~/ajce/mca/rmca$ man paste
+student@T6:~/ajce/mca/rmca$ paste f1 f2 f3
+anju	kannur 	1
+anjana	kasaragod	2
+aaaa	kottayam	3
+gggg	wayanadu	4
+hhhh	calicut	5
+yyyy	idukki	6
+student@T6:~/ajce/mca/rmca$ paste f1 f2 
+anju	kannur 
+anjana	kasaragod
+aaaa	kottayam
+gggg	wayanadu
+hhhh	calicut
+yyyy	idukki
+student@T6:~/ajce/mca/rmca$ paste -s  f1 f2 
+anju	anjana	aaaa	gggg	hhhh	yyyy
+kannur 	kasaragod	kottayam	wayanadu	calicut	idukki
+student@T6:~/ajce/mca/rmca$ paste -d "|"  f1 f2 
+anju|kannur 
+anjana|kasaragod
+aaaa|kottayam
+gggg|wayanadu
+hhhh|calicut
+yyyy|idukki
+student@T6:~/ajce/mca/rmca$ paste -d "||"  f1 f2 
+anju|kannur 
+anjana|kasaragod
+aaaa|kottayam
+gggg|wayanadu
+hhhh|calicut
+yyyy|idukki
+student@T6:~/ajce/mca/rmca$ paste -d "||"  f1 f2 f3
+anju|kannur |1
+anjana|kasaragod|2
+aaaa|kottayam|3
+gggg|wayanadu|4
+hhhh|calicut|5
+yyyy|idukki|6
+student@T6:~/ajce/mca/rmca$ paste -s -d "||"  f1 f2 f3
+anju|anjana|aaaa|gggg|hhhh|yyyy
+kannur |kasaragod|kottayam|wayanadu|calicut|idukki
+1|2|3|4|5|6
+student@T6:~/ajce/mca/rmca$ ^C
+student@T6:~/ajce/mca/rmca$ 
+

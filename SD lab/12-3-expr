@@ -1,0 +1,196 @@
+student@T6:~$ expr 12+8
+12+8
+student@T6:~$ $expr 12+8
+12+8: command not found
+student@T6:~$ expr 12 + 8
+20
+student@T6:~$ expr 12 \* 8
+96
+student@T6:~$ echo "enter two nos"
+enter two nos
+student@T6:~$ read x
+10
+student@T6:~$ read y
+19
+student@T6:~$ sum=`expr $x + $y`
+student@T6:~$ echo "sum="$sum
+sum=29
+student@T6:~$ read a
+11
+student@T6:~$ read b
+45
+student@T6:~$ sub=`expr $a - $b`
+student@T6:~$ echo $sub
+-34
+student@T6:~$ read a
+10
+student@T6:~$ read b
+2
+student@T6:~$ mul=`expr a \ * b`
+expr: syntax error
+student@T6:~$ mul=`expr a \* b`
+expr: non-integer argument
+student@T6:~$ mul=expr a \* b
+a: command not found
+student@T6:~$ mul=expr $a \* $b
+10: command not found
+student@T6:~$ mul=`expr $a \* $b`
+student@T6:~$ echo $mul
+20
+student@T6:~$ read x
+10
+student@T6:~$ read y
+20
+student@T6:~$ res=`expr $x = $y`
+student@T6:~$ echo $res
+0
+student@T6:~$ res= 'expr $x \< $y'
+expr $x \< $y: command not found
+student@T6:~$ read a
+10
+student@T6:~$ read b
+20
+student@T6:~$ res= 'expr $a \< $b'
+expr $a \< $b: command not found
+student@T6:~$ res= 'expr $a \< $b'
+expr $a \< $b: command not found
+student@T6:~$ read x
+geeks
+student@T6:~$ len=`expr length $x`
+student@T6:~$ echo $len
+5
+student@T6:~$ read x
+geeksforgeeks
+student@T6:~$ len=`expr length $x`
+student@T6:~$ echo $len
+13
+student@T6:~$ read x
+geeks
+student@T6:~$ sub=`expr substr $x 2 3`
+student@T6:~$ echo $sub;
+eek
+student@T6:~$ sub=`expr substr $x 4 8`
+student@T6:~$ echo $sub;
+ks
+student@T6:~$ echo "enter two nos"
+enter two nos
+student@T6:~$ read a
+10
+student@T6:~$ read b
+20
+student@T6:~$ mul=`expr $a \* $b`
+student@T6:~$ echo $mul
+200
+student@T6:~$ read a
+10
+student@T6:~$ read b
+10
+student@T6:~$ echo $mul=`expr $a \* $b`
+200=100
+student@T6:~$ expr --help
+Usage: expr EXPRESSION
+  or:  expr OPTION
+
+      --help     display this help and exit
+      --version  output version information and exit
+
+Print the value of EXPRESSION to standard output.  A blank line below
+separates increasing precedence groups.  EXPRESSION may be:
+
+  ARG1 | ARG2       ARG1 if it is neither null nor 0, otherwise ARG2
+
+  ARG1 & ARG2       ARG1 if neither argument is null or 0, otherwise 0
+
+  ARG1 < ARG2       ARG1 is less than ARG2
+  ARG1 <= ARG2      ARG1 is less than or equal to ARG2
+  ARG1 = ARG2       ARG1 is equal to ARG2
+  ARG1 != ARG2      ARG1 is unequal to ARG2
+  ARG1 >= ARG2      ARG1 is greater than or equal to ARG2
+  ARG1 > ARG2       ARG1 is greater than ARG2
+
+  ARG1 + ARG2       arithmetic sum of ARG1 and ARG2
+  ARG1 - ARG2       arithmetic difference of ARG1 and ARG2
+
+  ARG1 * ARG2       arithmetic product of ARG1 and ARG2
+  ARG1 / ARG2       arithmetic quotient of ARG1 divided by ARG2
+  ARG1 % ARG2       arithmetic remainder of ARG1 divided by ARG2
+
+  STRING : REGEXP   anchored pattern match of REGEXP in STRING
+
+  match STRING REGEXP        same as STRING : REGEXP
+  substr STRING POS LENGTH   substring of STRING, POS counted from 1
+  index STRING CHARS         index in STRING where any CHARS is found, or 0
+  length STRING              length of STRING
+  + TOKEN                    interpret TOKEN as a string, even if it is a
+                               keyword like 'match' or an operator like '/'
+
+  ( EXPRESSION )             value of EXPRESSION
+
+Beware that many operators need to be escaped or quoted for shells.
+Comparisons are arithmetic if both ARGs are numbers, else lexicographical.
+Pattern matches return the string matched between \( and \) or null; if
+\( and \) are not used, they return the number of characters matched or 0.
+
+Exit status is 0 if EXPRESSION is neither null nor 0, 1 if EXPRESSION is null
+or 0, 2 if EXPRESSION is syntactically invalid, and 3 if an error occurred.
+
+GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+Full documentation at: <http://www.gnu.org/software/coreutils/expr>
+or available locally via: info '(coreutils) expr invocation'
+student@T6:~$ read x
+amaljyothi
+student@T6:~$ len=`expr length $x`
+student@T6:~$ echo $len
+10
+student@T6:~$ read x
+geeks
+student@T6:~$ read y
+geek
+student@T6:~$ res=`expr $x \< $y`
+student@T6:~$ echo $res
+0
+student@T6:~$ read x
+geeks
+student@T6:~$ read y
+geek
+student@T6:~$ res=`expr $x \> $y`
+student@T6:~$ echo $res
+1
+student@T6:~$ readx
+readx: command not found
+student@T6:~$ read x
+geek
+student@T6:~$ read y
+ geek
+student@T6:~$ 
+student@T6:~$ res=`expr $x = $y`
+student@T6:~$ echo $res
+1
+student@T6:~$ read x
+10
+student@T6:~$ read y
+2
+student@T6:~$ div=`expr $x \/ $ y`
+expr: non-integer argument
+student@T6:~$ div=`expr $x \/ $y`
+student@T6:~$ echo $div
+5
+student@T6:~$ read y
+10
+student@T6:~$ y=`expr $y + 1`
+student@T6:~$ echo $y
+11
+student@T6:~$ y=10
+student@T6:~$ y=`expr $y - 1`
+student@T6:~$ echo $y
+9
+student@T6:~$ expr --version
+expr (GNU coreutils) 8.28
+Copyright (C) 2017 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Mike Parker, James Youngman, and Paul Eggert.
+student@T6:~$ 
+

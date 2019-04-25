@@ -1,0 +1,300 @@
+student@T6:~$ touch my.txt
+student@T6:~$ cat my.txt
+student@T6:~$ cd ajce
+student@T6:~/ajce$ cd mca
+student@T6:~/ajce/mca$ cd rmca
+student@T6:~/ajce/mca/rmca$ touch first.txt
+student@T6:~/ajce/mca/rmca$ touch f2
+student@T6:~/ajce/mca/rmca$ touch f3
+student@T6:~/ajce/mca/rmca$ cat >first.txt
+sjdsjdjskdksjdjsdjjjdjdjdjjdjjj^C
+student@T6:~/ajce/mca/rmca$ cat first.txt
+student@T6:~/ajce/mca/rmca$ cat first.txt
+1 2 3 4 5 6 7 8 9 
+student@T6:~/ajce/mca/rmca$ cat >f2.txt
+ewdwfewf fefgeg ^C
+student@T6:~/ajce/mca/rmca$ cat f2.txt
+student@T6:~/ajce/mca/rmca$ cat >f4.txt
+ftgvhjknhl,bbbbbbbb^C
+student@T6:~/ajce/mca/rmca$ cat f4.txt
+student@T6:~/ajce/mca/rmca$ cat > f5.txt
+1
+2
+3
+4
+5
+^C
+student@T6:~/ajce/mca/rmca$ cat f5.txt
+1
+2
+3
+4
+5
+student@T6:~/ajce/mca/rmca$ man cat
+student@T6:~/ajce/mca/rmca$ cat f.txt
+cat: f.txt: No such file or directory
+student@T6:~/ajce/mca/rmca$ cat f3.txt
+cat: f3.txt: No such file or directory
+student@T6:~/ajce/mca/rmca$ cat f3
+student@T6:~/ajce/mca/rmca$ cat f5.txt f3
+1
+2
+3
+4
+5
+student@T6:~/ajce/mca/rmca$ cat -n f3
+student@T6:~/ajce/mca/rmca$ cat f3
+student@T6:~/ajce/mca/rmca$ cat f5.txt
+1
+2
+3
+4
+5
+student@T6:~/ajce/mca/rmca$ cat f5.txt > f2
+student@T6:~/ajce/mca/rmca$ cat f2
+1
+2
+3
+4
+5
+student@T6:~/ajce/mca/rmca$ cat -n f2
+     1	1
+     2	2
+     3	3
+     4	4
+     5	5
+student@T6:~/ajce/mca/rmca$ cat >s.txt
+10 
+20
+30
+40
+50
+^C
+student@T6:~/ajce/mca/rmca$ cat -n s.txt
+     1	10 
+     2	20
+     3	30
+     4	40
+     5	50
+student@T6:~/ajce/mca/rmca$ cat f5.txt s.txt>f2.txt
+student@T6:~/ajce/mca/rmca$ cat f2.txt
+1
+2
+3
+4
+5
+10 
+20
+30
+40
+50
+student@T6:~/ajce/mca/rmca$ cat *
+1
+2
+3
+4
+5
+1
+2
+3
+4
+5
+10 
+20
+30
+40
+50
+1
+2
+3
+4
+5
+1 2 3 4 5 6 7 8 9 
+10 
+20
+30
+40
+50
+student@T6:~/ajce/mca/rmca$ cat -s f2.txt
+1
+2
+3
+4
+5
+10 
+20
+30
+40
+50
+student@T6:~/ajce/mca/rmca$ cat f2>>f2.txt
+student@T6:~/ajce/mca/rmca$ cat f2.txt
+1
+2
+3
+4
+5
+10 
+20
+30
+40
+50
+1
+2
+3
+4
+5
+student@T6:~/ajce/mca/rmca$ cat f2; cat f2.txt ;
+1
+2
+3
+4
+5
+1
+2
+3
+4
+5
+10 
+20
+30
+40
+50
+1
+2
+3
+4
+5
+student@T6:~/ajce/mca/rmca$ cat f2; cat f5.txt ;
+1
+2
+3
+4
+5
+1
+2
+3
+4
+5
+student@T6:~/ajce/mca/rmca$ cat f2>>f3
+student@T6:~/ajce/mca/rmca$ cat f3
+1
+2
+3
+4
+5
+student@T6:~/ajce/mca/rmca$ cat > f4.txt
+hello
+
+
+hai
+^C
+student@T6:~/ajce/mca/rmca$ cat f4.txt
+hello
+
+
+hai
+student@T6:~/ajce/mca/rmca$ cat -s f4.txt
+hello
+
+hai
+student@T6:~/ajce/mca/rmca$ man cat
+student@T6:~/ajce/mca/rmca$ cat >n.txt
+dddd	jjjjj
+1	2
+3	4
+5	6
+^C
+student@T6:~/ajce/mca/rmca$ CAT N.TXT
+CAT: command not found
+student@T6:~/ajce/mca/rmca$ cat n.txt
+dddd	jjjjj
+1	2
+3	4
+5	6
+student@T6:~/ajce/mca/rmca$ cat -T.txt
+cat: invalid option -- '.'
+Try 'cat --help' for more information.
+student@T6:~/ajce/mca/rmca$ cat -T n.txt
+dddd^Ijjjjj
+1^I2
+3^I4
+5^I6
+student@T6:~/ajce/mca/rmca$ cat -b s.txt
+     1	10 
+     2	20
+     3	30
+     4	40
+     5	50
+student@T6:~/ajce/mca/rmca$ tac f10.txt
+tac: failed to open 'f10.txt' for reading: No such file or directory
+student@T6:~/ajce/mca/rmca$ tac s
+tac: failed to open 's' for reading: No such file or directory
+student@T6:~/ajce/mca/rmca$ tac s.txt
+50
+40
+30
+20
+10 
+student@T6:~/ajce/mca/rmca$ cat -A s.txt
+10 $
+20$
+30$
+40$
+50$
+student@T6:~/ajce/mca/rmca$ cat -v s.txt
+10 
+20
+30
+40
+50
+student@T6:~/ajce/mca/rmca$ mv f3 f2
+student@T6:~/ajce/mca/rmca$ mv f2 f2.txt
+student@T6:~/ajce/mca/rmca$ ls
+f2.txt  f4.txt  f5.txt  first.txt  n.txt  s.txt
+student@T6:~/ajce/mca/rmca$ mv f2 f4
+mv: cannot stat 'f2': No such file or directory
+student@T6:~/ajce/mca/rmca$ mv f2 f4.txt
+mv: cannot stat 'f2': No such file or directory
+student@T6:~/ajce/mca/rmca$ mv f2.txt f4.txt
+student@T6:~/ajce/mca/rmca$ cat f4.txt
+1
+2
+3
+4
+5
+student@T6:~/ajce/mca/rmca$ touch a
+student@T6:~/ajce/mca/rmca$ mv -i f4.txt a
+mv: overwrite 'a'? n
+student@T6:~/ajce/mca/rmca$ cat a
+student@T6:~/ajce/mca/rmca$ cat > a
+hai
+
+hello
+^C
+student@T6:~/ajce/mca/rmca$ mv -i f4.txt a
+mv: overwrite 'a'? n
+student@T6:~/ajce/mca/rmca$ cat a
+hai
+
+hello
+student@T6:~/ajce/mca/rmca$ mv -i f4.txt a
+mv: overwrite 'a'? y
+student@T6:~/ajce/mca/rmca$ cat a
+1
+2
+3
+4
+5
+student@T6:~/ajce/mca/rmca$ ls
+a  f5.txt  first.txt  n.txt  s.txt
+student@T6:~/ajce/mca/rmca$ mkdir a
+mkdir: cannot create directory ‘a’: File exists
+student@T6:~/ajce/mca/rmca$ mkdir ab
+student@T6:~/ajce/mca/rmca$ mv -i a.txt ab
+mv: cannot stat 'a.txt': No such file or directory
+student@T6:~/ajce/mca/rmca$ mv -i a ab
+student@T6:~/ajce/mca/rmca$ mv * ab
+mv: cannot move 'ab' to a subdirectory of itself, 'ab/ab'
+student@T6:~/ajce/mca/rmca$ ^C
+student@T6:~/ajce/mca/rmca$ 
+

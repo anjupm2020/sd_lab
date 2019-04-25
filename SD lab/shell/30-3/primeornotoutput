@@ -1,0 +1,22 @@
+student@T38:~$ ./pn.sh
+Enter the number
+2
+Prime number
+student@T38:~$ ./pn.sh
+Enter the number
+4
+Not Prime
+student@T38:~$ 
+student@T38:~$ ./pr.sh
+Enter a number: 4
+4 is not a prime number
+Since it is divisible by 2
+student@T38:~$ 
+
+
+
+
+
+
+
+

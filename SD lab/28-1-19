@@ -1,0 +1,85 @@
+student@T6:~$ echo anju;
+anju
+student@T6:~$ read a;
+5
+student@T6:~$ echo $a;
+5
+student@T6:~$ echo a;
+a
+student@T6:~$ man echo
+student@T6:~$ echo "hello world";
+hello world
+student@T6:~$ echo -e '\tthe \tspaces'
+	the 	spaces
+student@T6:~$ echo \bthe \bspaces \bare \bbackspaces
+bthe bspaces bare bbackspaces
+student@T6:~$ echo '\bthe \bspaces \bare \bbackspaces'
+\bthe \bspaces \bare \bbackspaces
+student@T6:~$ echo -e '\bthe \bspaces \bare \bbackspaces'
+thespacesarebackspaces
+student@T6:~$ echo -e '\nthe \nspaces \nare \nbackspaces'
+
+the 
+spaces 
+are 
+backspaces
+student@T6:~$ echo -e '\vthe \vspaces \vare \vbackspaces'
+
+the 
+    spaces 
+           are 
+               backspaces
+student@T6:~$ read -p "enter your name"
+enter your name anju
+student@T6:~$ read -n 5 -p "enter five character only"
+enter five character only 1234student@T6:~$ 12345
+12345: command not found
+student@T6:~$ man read
+student@T6:~$ read a,b
+bash: read: `a,b': not a valid identifier
+student@T6:~$ read a
+10
+student@T6:~$ read b
+20
+student@T6:~$ echo $a + $b
+10 + 20
+student@T6:~$ echo '$a + $b'
+$a + $b
+student@T6:~$ read c
+$c=$a+$b
+student@T6:~$ echo $c
+$c=$a+$b
+student@T6:~$ read -p "enter a no" a
+enter a no10
+student@T6:~$ read -p "enter a no" b
+enter a no12
+student@T6:~$ sum=$ ((a+b))
+bash: syntax error near unexpected token `('
+student@T6:~$ sum=$((a+b))
+student@T6:~$ echo "sum i=" $sum 
+sum i= 22
+student@T6:~$ read a
+10
+student@T6:~$ read b
+20
+student@T6:~$ c=$((a+b))
+student@T6:~$ echo $c
+30
+student@T6:~$ echo -e "termint \ris a community of linux nerds"
+is a community of linux nerds
+student@T6:~$ echo -e "termint is a community \cof linux nerds"
+termint is a community student@T6:~$ echo -e "termint is a community \cof linux \ris a communi
+student@T6:~$ echo -n "termint is a community of linux nerds"
+termint is a community of linux nerdsstudent@T6:~$ 
+student@T6:~$ read a b
+10 20
+student@T6:~$ echo $a $b
+10 20
+student@T6:~$ man printf
+student@T6:~$ man 2 intro
+student@T6:~$ man -f ls
+ls (1)               - list directory contents
+student@T6:~$ man -a intro
+--Man-- next: intro(8) [ view (return) | skip (Ctrl-D) | quit (Ctrl-C) ]
+2
+

@@ -1,0 +1,226 @@
+student@T6:~$ cd desktop
+bash: cd: desktop: No such file or directory
+student@T6:~$ cd Documents
+student@T6:~/Documents$ cd mca
+student@T6:~/Documents/mca$ git clone git@github.com:anjupm2020/newgithub.git
+Cloning into 'newgithub'...
+The authenticity of host 'github.com (192.30.253.113)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,192.30.253.113' (RSA) to the list of known hosts.
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+student@T6:~/Documents/mca$ git clone https://github.com/anjupm2020/newgithub.git
+Cloning into 'newgithub'...
+Username for 'https://github.com': Anjupm2020
+Password for 'https://Anjupm2020@github.com': 
+warning: You appear to have cloned an empty repository.
+student@T6:~/Documents/mca$ cd newgithub
+student@T6:~/Documents/mca/newgithub$ gedit new.java
+student@T6:~/Documents/mca/newgithub$ git add newgithub
+fatal: pathspec 'newgithub' did not match any files
+student@T6:~/Documents/mca/newgithub$ git add new.java
+student@T6:~/Documents/mca/newgithub$ git config --global user.email "anjumathew533@gmail.com"
+student@T6:~/Documents/mca/newgithub$ git config --global user.name "anjupm2020" 
+student@T6:~/Documents/mca/newgithub$ git commit -m "commit"
+[master (root-commit) 53eaa57] commit
+ 1 file changed, 7 insertions(+)
+ create mode 100644 new.java
+student@T6:~/Documents/mca/newgithub$ git remote add origin https://github.com/anjupm2020/newgithub
+fatal: remote origin already exists.
+student@T6:~/Documents/mca/newgithub$ git remote add orig https://github.com/anjupm2020/newgithub
+student@T6:~/Documents/mca/newgithub$ git push origin master
+Username for 'https://github.com': anjupm2020
+Password for 'https://anjupm2020@github.com': 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 308 bytes | 308.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/anjupm2020/newgithub.git
+ * [new branch]      master -> master
+student@T6:~/Documents/mca/newgithub$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+student@T6:~/Documents/mca/newgithub$ git branch two
+student@T6:~/Documents/mca/newgithub$ git checkout two
+Switched to branch 'two'
+student@T6:~/Documents/mca/newgithub$ gedit old.java
+student@T6:~/Documents/mca/newgithub$ git add old.java
+student@T6:~/Documents/mca/newgithub$ git commit -m "new file"
+[two 5157696] new file
+ 1 file changed, 7 insertions(+)
+ create mode 100644 old.java
+student@T6:~/Documents/mca/newgithub$ git remote add or https://github.com/anjupm2020/newgithub.git
+student@T6:~/Documents/mca/newgithub$ git push origin two
+Username for 'https://github.com': anjupm2020
+Password for 'https://anjupm2020@github.com': 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 359 bytes | 359.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: 
+remote: Create a pull request for 'two' on GitHub by visiting:
+remote:      https://github.com/anjupm2020/newgithub/pull/new/two
+remote: 
+To https://github.com/anjupm2020/newgithub.git
+ * [new branch]      two -> two
+student@T6:~/Documents/mca/newgithub$ git status
+On branch two
+nothing to commit, working tree clean
+student@T6:~/Documents/mca/newgithub$ git fetch origin two
+Username for 'https://github.com': anjupm2020
+Password for 'https://anjupm2020@github.com': 
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/anjupm2020/newgithub
+ * branch            two        -> FETCH_HEAD
+   5157696..cff7de2  two        -> origin/two
+student@T6:~/Documents/mca/newgithub$ git merge origin/two
+Updating 5157696..cff7de2
+Fast-forward
+ old.java | 1 +
+ 1 file changed, 1 insertion(+)
+student@T6:~/Documents/mca/newgithub$ git pull origin two
+Username for 'https://github.com': anjupm2020
+Password for 'https://anjupm2020@github.com': 
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/anjupm2020/newgithub
+ * branch            two        -> FETCH_HEAD
+   cff7de2..fd6dc7c  two        -> origin/two
+Updating cff7de2..fd6dc7c
+Fast-forward
+ old.java | 3 +++
+ 1 file changed, 3 insertions(+)
+student@T6:~/Documents/mca/newgithub$ git pull origin two
+Username for 'https://github.com': anjupm2020
+Password for 'https://anjupm2020@github.com': 
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+Unpacking objects: 100% (2/2), done.
+remote: Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+From https://github.com/anjupm2020/newgithub
+ * branch            two        -> FETCH_HEAD
+   fd6dc7c..da77131  two        -> origin/two
+Updating fd6dc7c..da77131
+Fast-forward
+ newfile.java | 7 +++++++
+ 1 file changed, 7 insertions(+)
+ create mode 100644 newfile.java
+student@T6:~/Documents/mca/newgithub$ git fetch origin two
+Username for 'https://github.com': anjupm2020
+Password for 'https://anjupm2020@github.com': 
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (2/2), done.
+From https://github.com/anjupm2020/newgithub
+ * branch            two        -> FETCH_HEAD
+   da77131..9eefacf  two        -> origin/two
+student@T6:~/Documents/mca/newgithub$ git merge origin/two
+Updating da77131..9eefacf
+Fast-forward
+ file2 | 7 +++++++
+ 1 file changed, 7 insertions(+)
+ create mode 100644 file2
+student@T6:~/Documents/mca/newgithub$ git checkout -b three
+Switched to a new branch 'three'
+student@T6:~/Documents/mca/newgithub$ gedit s.java
+student@T6:~/Documents/mca/newgithub$ git rebase master
+Current branch three is up to date.
+student@T6:~/Documents/mca/newgithub$ git branch -d three
+error: Cannot delete branch 'three' checked out at '/home/student/Documents/mca/newgithub'
+student@T6:~/Documents/mca/newgithub$ git checkout two
+Switched to branch 'two'
+student@T6:~/Documents/mca/newgithub$ git branch -d three
+Deleted branch three (was 9eefacf).
+student@T6:~/Documents/mca/newgithub$ git log
+commit 9eefacf120eb5303bc61b3a560c6ca3442e27e0a (HEAD -> two, origin/two)
+Author: anjupm2020 <48617283+anjupm2020@users.noreply.github.com>
+Date:   Thu Apr 11 14:53:09 2019 +0530
+
+    Create file2
+
+commit da771314149740088da0014f9cedaeda2eb58f76
+Author: anjupm2020 <48617283+anjupm2020@users.noreply.github.com>
+Date:   Thu Apr 11 14:51:13 2019 +0530
+
+    Create newfile.java
+
+commit fd6dc7cc265f0e753f2aaa665a6166796527ddeb
+Author: anjupm2020 <48617283+anjupm2020@users.noreply.github.com>
+Date:   Thu Apr 11 14:49:11 2019 +0530
+
+    Update old.java
+
+commit cff7de2b768623cad032ed036908dd86ab07ba61
+Author: anjupm2020 <48617283+anjupm2020@users.noreply.github.com>
+Date:   Thu Apr 11 14:46:28 2019 +0530
+
+    Update old.java
+student@T6:~/Documents/mca/newgithub$ git status
+On branch two
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	s.java
+
+nothing added to commit but untracked files present (use "git add" to track)
+student@T6:~/Documents/mca/newgithub$ git rebase master
+Current branch two is up to date.
+student@T6:~/Documents/mca/newgithub$ git fetch origin two
+Username for 'https://github.com': anjupm2020
+Password for 'https://anjupm2020@github.com': 
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/anjupm2020/newgithub
+ * branch            two        -> FETCH_HEAD
+   9eefacf..800bea4  two        -> origin/two
+student@T6:~/Documents/mca/newgithub$ git diff origin/master
+diff --git a/file2 b/file2
+new file mode 100644
+index 0000000..6328672
+--- /dev/null
++++ b/file2
+@@ -0,0 +1,7 @@
++class new
++{
++public static void main(String args[])
++ {
++   System.out.println("welcome to my new repository");
++ }
++}
+diff --git a/newfile.java b/newfile.java
+new file mode 100644
+index 0000000..6328672
+--- /dev/null
++++ b/newfile.java
+@@ -0,0 +1,7 @@
++class new
++{
++public static void main(String args[])
++ {
+
+[1]+  Stopped                 git diff origin/master
+student@T6:~/Documents/mca/newgithub$ git merge origin/master
+Already up to date.
+student@T6:~/Documents/mca/newgithub$ 
+

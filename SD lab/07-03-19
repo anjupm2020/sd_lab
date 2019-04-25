@@ -1,0 +1,95 @@
+student@T6:~$ cd ajce
+student@T6:~/ajce$ cd mca
+student@T6:~/ajce/mca$ cd rmca
+student@T6:~/ajce/mca/rmca$ ls
+a1.txt  b1  bb  b.txt  dir  f1  f2  f3  g  h  p.txt  t.txt  x.txt  z.txt
+student@T6:~/ajce/mca/rmca$ touch grp
+student@T6:~/ajce/mca/rmca$ touch grp1
+student@T6:~/ajce/mca/rmca$ grep "unix" grp
+unix is great os. unix is opensource. unix is free os.
+uNix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful
+student@T6:~/ajce/mca/rmca$ grep "unix" grp grp1
+grp:unix is great os. unix is opensource. unix is free os.
+grp:uNix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful
+grp1:in the give file. It matches the words like “UNIX”, “Unix”, “unix”.
+grp1:unix is great os. unix is opensource. unix is free os.
+grp1:uNix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful
+student@T6:~/ajce/mca/rmca$ grep "pattern" grp grp1
+grp:The grep filter searches a file for a particular pattern of characters, 
+grp:and displays all lines that contain that pattern. 
+grp:The pattern that is searched in the file is referred to as the regular 
+grp1:The pattern that is searched.
+student@T6:~/ajce/mca/rmca$ grep "pattern"  grp1
+The pattern that is searched.
+student@T6:~/ajce/mca/rmca$ grep -i "unix" grp
+unix is great os. unix is opensource. unix is free os.
+Unix linux which one you choose.
+uNix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful
+student@T6:~/ajce/mca/rmca$ egrep -w 'unix |file' grp
+The grep filter searches a file for a particular pattern of characters, 
+The pattern that is searched in the file is referred to as the regular 
+uNix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful
+student@T6:~/ajce/mca/rmca$ grep -w "that" grp1
+The pattern that is searched.
+student@T6:~/ajce/mca/rmca$ grep -B1 "all" grp
+The grep filter searches a file for a particular pattern of characters, 
+and displays all lines that contain that pattern. 
+--
+expression (grep stands for
+ globally search for regular expression and print out).
+student@T6:~/ajce/mca/rmca$ grep -B1 "all" grp1
+student@T6:~/ajce/mca/rmca$ grep -B1 "file" grp1
+ The -i option enables to search for a string case insensitively 
+in the give file. It matches the words like “UNIX”, “Unix”, “unix”.
+student@T6:~/ajce/mca/rmca$ grep -A1 "file" grp1
+in the give file. It matches the words like “UNIX”, “Unix”, “unix”.
+unix is great os. unix is opensource. unix is free os.
+student@T6:~/ajce/mca/rmca$ grep -n "file" grp1
+3:in the give file. It matches the words like “UNIX”, “Unix”, “unix”.
+student@T6:~/ajce/mca/rmca$ grep -c "file" grp1
+1
+student@T6:~/ajce/mca/rmca$ grep -c "unix" grp
+2
+student@T6:~/ajce/mca/rmca$ grep -c "unix" grp1
+3
+student@T6:~/ajce/mca/rmca$ grep -o "unix" grp1
+unix
+unix
+unix
+unix
+unix
+unix
+unix
+student@T6:~/ajce/mca/rmca$ grep -v "unix" grp1
+The pattern that is searched.
+ The -i option enables to search for a string case insensitively 
+Unix linux which one you choose.
+student@T6:~/ajce/mca/rmca$ grep "^file" grp1
+student@T6:~/ajce/mca/rmca$ grep "^file" grp
+student@T6:~/ajce/mca/rmca$ grep "^unix" grp
+unix is great os. unix is opensource. unix is free os.
+student@T6:~/ajce/mca/rmca$ grep "unix$" grp
+student@T6:~/ajce/mca/rmca$ grep "all$" grp
+student@T6:~/ajce/mca/rmca$ grep "all$" grp1
+student@T6:~/ajce/mca/rmca$ grep "unix$" grp1
+student@T6:~/ajce/mca/rmca$ egrep -w 'unix | all' grp
+uNix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful
+student@T6:~/ajce/mca/rmca$ grep "os" grp1
+unix is great os. unix is opensource. unix is free os.
+Unix linux which one you choose.
+uNix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful
+student@T6:~/ajce/mca/rmca$ grep -n "learn " grp
+student@T6:~/ajce/mca/rmca$ grep -n "learn " grp1
+student@T6:~/ajce/mca/rmca$ egrep -w 'unix | learn' grp grp1
+grp:uNix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful
+grp1:uNix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful
+student@T6:~/ajce/mca/rmca$ egrep -h 'unix | that' grp grp1
+and displays all lines that contain that pattern. 
+The pattern that is searched in the file is referred to as the regular 
+unix is great os. unix is opensource. unix is free os.
+uNix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful
+The pattern that is searched.
+unix is great os. unix is opensource. unix is free os.
+uNix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful
+student@T6:~/ajce/mca/rmca$ 
+
